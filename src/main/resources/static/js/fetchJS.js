@@ -98,7 +98,7 @@ const renderUsers = (users) => {
         })}</td>
                                 <td>
                                     <button type="button" class="btnEdit btn btn-info"
-                                            data-toggle="modal" data-target="${'#ed' + user.id}">
+                                            data-toggle="modal" >
                                         Edit
                                     </button>
                                 </td>
@@ -257,7 +257,7 @@ const renderUsersAfter = (users) => {
         })}</td>
                                 <td>
                                     <button type="button" class="btnEdit btn btn-info"
-                                            data-toggle="modal" data-target="${'#ed' + user.id}">
+                                            data-toggle="modal" >
                                         Edit
                                     </button>
                                 </td>
