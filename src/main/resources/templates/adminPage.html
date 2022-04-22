@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Admin page</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <style>
+        .navbar-dark .nav-link {
+            color: #969ea0;
+        }
+
+        .navbar-dark .nav-link:hover {
+            color: #bebcd0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark " id>
+    <div class="text-left text-white" style="font-size: 1.15rem;">
+        <a class="text-left" id="brand">
+        </a>
+    </div>
+    <a class="nav-link " href="logout">Logout</a>
+</nav>
+
+
+<!--Боковая панель-->
+<div class="container-fluency" style="overflow: hidden">
+    <div class="row">
+
+        <div class="col-md-2 " style="padding: 15px; margin: 0; padding-right:0;">
+            <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                <li class="nav-item">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                       aria-controls="v-pills-home" aria-selected="true">Admin</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                       aria-controls="v-pills-profile" aria-selected="false">User</a>
+                </li>
+            </ul>
+
+            <!--            <div class="row">-->
+            <!--                <div class="col-3">-->
+            <!--                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
+            <!--                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>-->
+            <!--                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>-->
+            <!--                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>-->
+            <!--                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+
+        </div>
+        <div class="col-10" style="margin: 0; padding-left:0; min-height: 100vh; background-color: #f8f9fa;">
+            <div style="padding-top: 20px; padding-left: 25px; padding-right: 25px;">
+
+                <!-- Первая вкладка Admin -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                         aria-labelledby="v-pills-home-tab">
+
+
+                        <h2 class="card-title">Admin panel</h2>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <!-- Вкладка  таблица юзеров -->
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                   aria-controls="home" aria-selected="true">Users table</a>
+                            </li>
+                            <!-- Вкладка  новый юзер -->
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                   aria-controls="profile" aria-selected="false">New User</a>
+                            </li>
+                        </ul>
+                        <!-- Вкладка  таблица юзеров -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="card">
+                                    <h5 class="card-header">All users</h5>
+                                    <div class="card-body">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Age</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Вкладка  новый юзер -->
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="card">
+                                    <h5 class="card-header">Add new user</h5>
+                                    <div class="card-body">
+                                        <div class="mx-auto text-center font-weight-bold" style="width: 300px;">
+                                            <form class="add-post-form">
+                                                <div class="form-group">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control form-control-sm"
+                                                           id="firstName-value"
+                                                           placeholder="First Name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Last name</label>
+                                                    <input type="text" class="form-control form-control-sm"
+                                                           id="lastName-value"
+                                                           placeholder="Last name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Age</label>
+                                                    <input type="number" class="form-control form-control-sm"
+                                                           id="age-value"
+                                                           placeholder="Age">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control form-control-sm"
+                                                           id="email-value"
+                                                           placeholder="Email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control form-control-sm"
+                                                           id="password-value"
+                                                           placeholder="Password">
+                                                </div>
+                                                <div class="form-group" id="form-group-select">
+                                                    <label>Role</label>
+                                                    <select class="form-control form-control-sm" id="roles-value"
+                                                            multiple name="rolesi" size="2">
+                                                    </select>
+                                                </div>
+                                                <button type="submit" class="btn btn-success">Add new user</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- Вторая вкладка User -->
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                         aria-labelledby="v-pills-profile-tab">
+
+                        <h2 class="card-title">User information page </h2>
+                        <div class="card">
+                            <h5 class="card-header">About user</h5>
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Age</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="navUser">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal edit -->
+<div class="modal" id="ed" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit user</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="editUser">
+                <div class="modal-body mx-auto text-center font-weight-bold"
+                     style="width: 300px;">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control form-control-sm"
+                               placeholder="ID" id="idEdIn" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control form-control-sm"
+                               id="firstNameEdIn"
+                               placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last name</label>
+                        <input type="text" class="form-control form-control-sm"
+                               id="lastNameEdIn"
+                               placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" class="form-control form-control-sm"
+                               id="ageEdIn"
+                               placeholder="Age">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control form-control-sm"
+                               id="emailEdIn"
+                               placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control form-control-sm"
+                               id="passwordEdIn"
+                               placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class="form-control form-control-sm" multiple
+                                name="rolesi" size="2" id="roleEdIn">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add new user-->
+
+
+<!-- Modal del-->
+<div class="modal" id="del" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete user</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="deleteUser">
+                <div class="modal-body mx-auto text-center font-weight-bold"
+                     style="width: 300px;">
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control form-control-sm"
+                                   placeholder="ID" id="idDelIn"
+                                   readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control form-control-sm"
+                                   id="firtsNameDelIn"
+
+                                   placeholder="First Name"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" class="form-control form-control-sm"
+                                   id="lastNameDelIn"
+                                   placeholder="Last name"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number"
+                                   class="form-control form-control-sm"
+                                   id="ageDelIn"
+                                   placeholder="Age">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control form-control-sm"
+                                   id="emailDelIn"
+                                   placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <select class="form-control form-control-sm" multiple
+                                    name="rolesi" size="2" id="roleDelIn">
+                                <option
+                                ></option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                    <button type="submit" class="btn btn-danger">Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../static/js/fetchJS.js">
+</script>
+
+</body>
+</html>
